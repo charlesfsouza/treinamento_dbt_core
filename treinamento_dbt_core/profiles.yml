@@ -1,0 +1,10 @@
+treinamento_dbt_core:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dbtcoretreinamento
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt_dw') }}"
+      threads: 4
+      keyfile: C:/Users/Charles/dbtcoretreinamento-553183783448.json
